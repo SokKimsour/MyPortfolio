@@ -1,0 +1,396 @@
+/* Universal Styles and Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  color: #333; /* Standard dark text */
+  background: #f8f8f8; /* Light background for sections */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden; /* Clear floats */
+}
+
+a {
+  text-decoration: none;
+  color: #3498db; /* A vibrant blue for accents */
+  transition: color 0.3s ease;
+  font-size: 1em;
+}
+
+a:hover {
+  color: #2c3e50; /* Dark blue/charcoal for text and backgrounds */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #2c3e50; /* Dark blue/charcoal for text and backgrounds */
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #3498db; /* A vibrant blue for accents */
+  border-radius: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #3498db; /* A vibrant blue for accents */
+  color: #ecf0f1; /* Light text for dark backgrounds */
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #2c3e50; /* Dark blue/charcoal for text and backgrounds */
+  transform: translateY(-3px); /* Subtle lift effect */
+}
+
+/* Header */
+header {
+  background: #34495e; /* Dark background for sections */
+  color: #ecf0f1; /* Light text for dark backgrounds */
+  padding: 20px 0;
+  position: sticky; /* Makes header stick to the top */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #ecf0f1; /* Light text for dark backgrounds */
+}
+
+header h1 a {
+  color: #ecf0f1; /* Light text for dark backgrounds */
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+header h1 a:hover {
+  color: #3498db; /* A vibrant blue for accents */
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline;
+  margin-left: 25px;
+}
+
+header nav ul li a {
+  color: #ecf0f1; /* Light text for dark backgrounds */
+  font-weight: 600;
+  padding: 5px 0;
+  position: relative;
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #3498db; /* A vibrant blue for accents */
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://via.placeholder.com/1500x800/2980b9/ffffff?text=Portfolio+Background")
+      no-repeat center center/cover;
+  color: #ecf0f1; /* Light text for dark backgrounds */
+  text-align: center;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Takes at least 80% of viewport height */
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeInScale 1s ease-out forwards;
+}
+
+.hero-content h2 {
+  color: #ecf0f1; /* Light text for dark backgrounds */
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+  background: #f8f8f8; /* Light background for sections */
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-text {
+  flex: 2; /* Takes more space */
+  min-width: 300px; /* Ensures it doesn't get too narrow */
+  max-width: 700px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.about-image {
+  flex: 1; /* Takes less space */
+  min-width: 200px;
+  max-width: 250px;
+  border-radius: 50%; /* Makes image round */
+  overflow: hidden; /* Hides parts outside the circle */
+  border: 5px solid #3498db; /* Creative border */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.about-image img {
+  border-radius: 50%; /* Ensures image itself is round */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 80px 0;
+  background: #34495e; /* Dark background for contrast */
+  color: #ecf0f1; /* Light text for dark backgrounds */
+}
+
+.projects-section h2,
+.projects-section h3 {
+  color: #ecf0f1; /* Light text for dark backgrounds */
+}
+
+.projects-section h2::after {
+  background: #3498db; /* A vibrant blue for accents */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 30px;
+}
+
+.project-card {
+  background: #f8f8f8; /* Light background for sections */
+  color: #333; /* Standard dark text */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px; /* Fixed height for project images */
+  object-fit: cover; /* Ensures images fill the space */
+  border-bottom: 1px solid #eee;
+}
+
+.project-card h3 {
+  margin-top: 20px;
+  padding: 0 20px;
+  color: #3498db; /* A vibrant blue for accents */
+}
+
+.project-card p {
+  padding: 0 20px 20px;
+  flex-grow: 1; /* Makes paragraph take up available space */
+}
+
+.project-card .project-link {
+  display: inline-block;
+  margin: 0 20px 20px;
+  padding: 8px 15px;
+  background: #3498db; /* A vibrant blue for accents */
+  color: #ecf0f1; /* Light text for dark backgrounds */
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.project-card .project-link:hover {
+  background: #2c3e50; /* Dark blue/charcoal for text and backgrounds */
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 0;
+  text-align: center;
+  background: #f8f8f8; /* Light background for sections */
+}
+
+.contact-section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-links .btn {
+  margin: 0 10px 20px; /* Adjust margin for buttons */
+}
+
+/* Footer */
+footer {
+  background: #2c3e50; /* Dark blue/charcoal for text and backgrounds */
+  color: #ecf0f1; /* Light text for dark backgrounds */
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9em;
+}
+
+/* Creative Touches: Keyframes for animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav ul {
+    margin-top: 15px;
+  }
+
+  header nav ul li {
+    margin: 0 10px;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-image {
+    order: -1; /* Move image above text on small screens */
+    margin-bottom: 30px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr; /* Stack projects vertically */
+  }
+
+  .contact-links .btn {
+    display: block; /* Make buttons full width */
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 2em;
+  }
+
+  .hero-content h2 {
+    font-size: 2em;
+  }
+}
